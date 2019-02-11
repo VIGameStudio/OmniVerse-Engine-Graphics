@@ -1,0 +1,9 @@
+[submodule "extern/OmniVerse-Engine-Core"]
+	path = extern/OmniVerse-Engine-Core
+	url = https://github.com/VIGameStudio/OmniVerse-Engine-Core.git
+[submodule "extern/OmniVerse-Engine-System"]
+	path = extern/OmniVerse-Engine-System
+	url = https://github.com/VIGameStudio/OmniVerse-Engine-System.git
+[submodule "extern/OmniVerse-Engine-Math"]
+	path = extern/OmniVerse-Engine-Math
+	url = https://github.com/VIGameStudio/OmniVerse-Engine-Math.git
