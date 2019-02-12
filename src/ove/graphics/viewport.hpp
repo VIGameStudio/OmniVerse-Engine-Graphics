@@ -1,5 +1,8 @@
 #pragma once
 
-namespace gfxs {
-struct viewport {};
+namespace graphics {
+
+struct viewport {
+};
+
 }

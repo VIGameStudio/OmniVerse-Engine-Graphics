@@ -1,22 +1,20 @@
 #pragma once
 
-#include <ove/gfxs/config.hpp>
 #include <ove/math/frustum.hpp>
 #include <ove/math/mat.hpp>
 #include <ove/math/quat.hpp>
 #include <ove/math/vec.hpp>
 
-namespace gfxs {
-using namespace core;
-using namespace math;
+namespace graphics {
 
 struct camera_t {
-  vec3_t<real> position;
-  quat_t<real> rotation;
-  frustum_t<real> frustum;
+    math::vec3<real> position;
+    math::quat_t<real> rotation;
+    math::frustum_t<real> frustum;
 
-  mat4_t<real> view;
-  mat4_t<real> projection;
-  mat4_t<real> combined;
+    math::mat4_t<real> view;
+    math::mat4_t<real> projection;
+    math::mat4_t<real> combined;
 };
+
 }

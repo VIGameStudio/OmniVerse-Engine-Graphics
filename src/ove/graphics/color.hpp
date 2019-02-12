@@ -1,5 +1,8 @@
 #pragma once
 
-namespace gfxs {
-struct color {};
+namespace graphics {
+
+struct color {
+};
+
 }

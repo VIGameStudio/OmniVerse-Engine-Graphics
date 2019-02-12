@@ -21,8 +21,41 @@ endif()
 
 include_directories(src)
 
-add_library(ove_graphics INTERFACE)
-target_include_directories(ove_graphics INTERFACE src ${OVE_CORE_INCLUDE_DIR} ${OVE_MATH_INCLUDE_DIR} ${OVE_SYSTEM_INCLUDE_DIR})
+add_library(ove_graphics SHARED
+    src/ove/graphics/dummy.hpp
+    src/ove/graphics/dummy.cpp
+
+    # Graphics
+    #src/ove/graphics/batch.hpp
+    #src/ove/graphics/camera.hpp
+    #src/ove/graphics/color.hpp
+    #src/ove/graphics/light.hpp
+    #src/ove/graphics/mesh.hpp
+    #src/ove/graphics/material.hpp
+    #src/ove/graphics/shader.hpp
+    #src/ove/graphics/procedural.hpp
+    #src/ove/graphics/procedural.cpp
+    #src/ove/graphics/texture.hpp
+    #src/ove/graphics/renderer.hpp
+    #src/ove/graphics/viewport.hpp
+    #src/ove/graphics/vertex.hpp
+
+    # OpenGL
+    #src/ove/graphics/gl/gl.hpp
+    #src/ove/graphics/gl/gl_material.hpp
+    #src/ove/graphics/gl/gl_material.cpp
+    #src/ove/graphics/gl/gl_mesh.hpp
+    #src/ove/graphics/gl/gl_mesh.cpp
+    #src/ove/graphics/gl/gl_renderer.hpp
+    #src/ove/graphics/gl/gl_renderer.cpp
+    #src/ove/graphics/gl/gl_shader.hpp
+    #src/ove/graphics/gl/gl_shader.cpp
+    #src/ove/graphics/gl/gl_texture.hpp
+    #src/ove/graphics/gl/gl_texture.cpp
+)
+
+target_include_directories(ove_graphics PUBLIC src ${OVE_CORE_INCLUDE_DIR} ${OVE_MATH_INCLUDE_DIR} ${OVE_SYSTEM_INCLUDE_DIR})
+target_link_libraries(ove_graphics ove_core ove_math ove_system)
 
 if(${OVE_GRAPHICS_BUILD_DEMO})
     add_executable(demo demo/main.cpp)

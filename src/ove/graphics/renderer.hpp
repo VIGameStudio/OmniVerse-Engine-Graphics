@@ -1,10 +1,11 @@
 #pragma once
 
-#include <ove/gfxs/camera.hpp>
-#include <ove/gfxs/model.hpp>
+#include <ove/graphics/camera.hpp>
 
-namespace gfxs {
+namespace graphics {
+
 struct renderer_t {
-  virtual void render(const camera_t &camera, const model_t &model) const = 0;
+    virtual void render(const camera_t& camera, const model_t& model) const = 0;
 };
+
 }

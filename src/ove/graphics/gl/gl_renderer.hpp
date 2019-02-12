@@ -1,9 +1,12 @@
 #pragma once
 
-#include <ove/gfxs/renderer.hpp>
+#include <ove/graphics/gl/gl.hpp>
+#include <ove/graphics/renderer.hpp>
 
-namespace gfxs {
+namespace graphics {
+
 struct gl_renderer_t : public renderer_t {
-  virtual void render(const camera_t &camera, const model_t &model) const;
+    virtual void render(const camera_t& camera, const model_t& model) const;
 };
+
 }
