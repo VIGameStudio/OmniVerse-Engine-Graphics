@@ -80,3 +80,22 @@ set(OVE_SYSTEM_BUILD_TEST OFF CACHE BOOL "enable X functionality" FORCE)
 set(OVE_SYSTEM_SHARED ON CACHE BOOL "enable X functionality" FORCE)
 add_subdirectory(OmniVerse-Engine-System)
 set(OVE_SYSTEM_INCLUDE_DIR ${OVE_SYSTEM_DIR}/src PARENT_SCOPE)
+
+
+
+# GLAD generator
+set(GLAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/GLAD)
+if(NOT EXISTS ${GLAD_DIR})
+
+    message("Initializing GLAD ...")
+    set (GLAD_GEN_COMMAND "glad")
+    set (GLAD_GEN_ARGS "--generator=c" "--profile=core" "--spec=gl" "--out-path=GLAD") #"--api=\"gl=3.2\""
+    execute_process(COMMAND ${GLAD_GEN_COMMAND} ${GLAD_GEN_ARGS}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+    message("GLAD initialized.")
+
+endif()
+
+add_library(GLAD SHARED ${GLAD_DIR}/src/glad.c)
+set(GLAD_INCLUDE_DIR ${GLAD_DIR}/include PARENT_SCOPE)
+target_include_directories(GLAD PUBLIC ${GLAD_DIR}/include)

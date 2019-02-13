@@ -1,5 +1,4 @@
 #pragma once
 
-namespace graphics {
-
-}
+#include <glad/glad.h>
+#include <GL/gl.h>

@@ -41,7 +41,7 @@ add_library(ove_graphics SHARED
     #src/ove/graphics/vertex.hpp
 
     # OpenGL
-    #src/ove/graphics/gl/gl.hpp
+    src/ove/graphics/gl/gl.hpp
     #src/ove/graphics/gl/gl_material.hpp
     #src/ove/graphics/gl/gl_material.cpp
     #src/ove/graphics/gl/gl_mesh.hpp
@@ -54,8 +54,8 @@ add_library(ove_graphics SHARED
     #src/ove/graphics/gl/gl_texture.cpp
 )
 
-target_include_directories(ove_graphics PUBLIC src ${OVE_CORE_INCLUDE_DIR} ${OVE_MATH_INCLUDE_DIR} ${OVE_SYSTEM_INCLUDE_DIR})
-target_link_libraries(ove_graphics ove_core ove_math ove_system)
+target_include_directories(ove_graphics PUBLIC src ${OVE_CORE_INCLUDE_DIR} ${OVE_MATH_INCLUDE_DIR} ${OVE_SYSTEM_INCLUDE_DIR} ${GLAD_INCLUDE_DIR})
+target_link_libraries(ove_graphics ove_core ove_math ove_system GLAD)
 
 if(${OVE_GRAPHICS_BUILD_DEMO})
     add_executable(demo demo/main.cpp)
