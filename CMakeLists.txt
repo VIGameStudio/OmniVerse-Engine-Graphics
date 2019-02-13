@@ -12,10 +12,6 @@ option(OVE_GRAPHICS_BUILD_TEST "Build test targets." OFF)
 option(OVE_GRAPHICS_SHARED "Build as shared library." OFF)
 
 if(NOT ${OVE_GRAPHICS_SHARED})
-    find_package(OpenGL REQUIRED)
-    find_package(GLUT REQUIRED)
-    find_package(X11 REQUIRED)
-
     add_subdirectory(extern)
 endif()
 
@@ -58,6 +54,8 @@ target_include_directories(ove_graphics PUBLIC src ${OVE_CORE_INCLUDE_DIR} ${OVE
 target_link_libraries(ove_graphics ove_core ove_math ove_system GLAD)
 
 if(${OVE_GRAPHICS_BUILD_DEMO})
+    find_package(X11 REQUIRED)
+
     add_executable(demo demo/main.cpp)
     target_link_libraries(demo ove_graphics ove_core ove_math ove_system)
 endif()
