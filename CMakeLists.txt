@@ -54,6 +54,7 @@ target_include_directories(ove_graphics PUBLIC src ${OVE_CORE_INCLUDE_DIR} ${OVE
 target_link_libraries(ove_graphics ove_core ove_math ove_system GLAD)
 
 if(${OVE_GRAPHICS_BUILD_DEMO})
+    find_package(OpenGL REQUIRED)
     find_package(X11 REQUIRED)
 
     add_executable(demo demo/main.cpp)
