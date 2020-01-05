@@ -15,7 +15,7 @@ using namespace ove::graphics;
 
 void ogl_render_device_t::setViewport(i32 x, i32 y, i32 width, i32 height)
 {
-	glViewport(x, y, width, width);
+	glViewport(x, y, width, height);
 }
 
 void ogl_render_device_t::clearRenderTarget(f32 r, f32 g, f32 b, f32 a)
