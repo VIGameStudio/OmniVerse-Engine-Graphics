@@ -26,7 +26,7 @@ namespace ove
 			bool useIndices = false;
 
 			shader_var indexVar = shader_var::SVAR_U32;
-			
+
 			size_t numIndices = 0;
 			size_t numVertices = 0;
 
