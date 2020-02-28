@@ -4,6 +4,7 @@
 #include <vector>
 
 #include <ove/graphics/renderer/shader.hpp>
+#include <ove/core/util/types.hpp>
 
 namespace ove
 {
